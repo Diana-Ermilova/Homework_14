@@ -50,16 +50,17 @@ pytest .
 4. Нажать на кнопку `Allure Report`
 
 ### Через некоторое время билд будет готов в Jenkins
-><img src="pictures/Jenkins.png" width="50">
+><img src="pictures/Jenkins.png" width="5000">
 
 ### Так же отчет доступен в Allure
 [Allure](https://jenkins.autotests.cloud/job/C18-Dee_and_Linux_the_Cat-unit13/4/allure/#)
-><img src="pictures/Allure.png" width="50">
+><img src="pictures/Allure.png" width="5000">
 
 ### А детальную информацию, в том числе и медиафайлы, можно увидеть в разделе Suites
 [Suites](https://jenkins.autotests.cloud/job/C18-Dee_and_Linux_the_Cat-unit13/4/allure/#suites)
-><img src="pictures/Suites.png" width="50">
+><img src="pictures/suites.png" width="5000">
 
 ### Отчет о результатах тестирования в Telegram
 Краткие отчеты приходят в Telegram-канал [Report channel](https://t.me/ErmilovaDV_test_reports_bot)
+><img src="pictures/Telegram.png" width="500">
 
