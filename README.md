@@ -13,7 +13,8 @@
 
 ---
 В проекте использовались следующие инструменты:
-<img src="pictures/allure_report_1.png" width="50"> <img src="pictures/pytest_1.png" width="50">  <img src="pictures/python_1.svg" width="50"> <img src="pictures/selene_1.png" width="50"> <img src="pictures/selenoid_1.png" width="50"> <img src="pictures/tg_1.png" width="50"> 
+
+><img src="pictures/allure_report_1.png" width="50"> <img src="pictures/pytest_1.png" width="50">  <img src="pictures/python_1.svg" width="50"> <img src="pictures/selene_1.png" width="50"> <img src="pictures/selenoid_1.png" width="50"> <img src="pictures/tg_1.png" width="50"> 
 
 - Язык программирования `Python`
 - Фреймворк для написания UI тестов `Selene` с использованием `Selenium WebDriver`
