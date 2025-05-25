@@ -1,7 +1,8 @@
 ## Простые тесты для сайта Author.Today
 [Author.Today] (https://author.today/)
 ---
->Любовь к чтению сопровождает человека с раннего возраста до глубокой старости. Кому-то по нраву наслаждаться изящными словесными оборотами авторов классики мировой литературы, кто-то находит >ответы на волнующие вопросы в книгах нон-фикшн, а для кого-то чтение — это возможность развлечься лихо закрученными сюжетами хороших детективов, любовных романов и фантастических произведений. (c) Описание с сайта.
+>Любовь к чтению сопровождает человека с раннего возраста до глубокой старости. Кому-то по нраву наслаждаться изящными словесными оборотами авторов классики мировой литературы, кто-то находит ответы на волнующие вопросы в книгах нон-фикшн, а для кого-то чтение — это возможность развлечься лихо закрученными сюжетами хороших детективов, любовных романов и фантастических произведений. (c) Описание с сайта.
+<img src="pictures/logo_main_1.jpg" width="5000">
 
 Проверки, проведенные в ходе тестов:
 - Открытие главной страницы
@@ -12,6 +13,8 @@
 
 ---
 В проекте использовались следующие инструменты:
+
+><img src="pictures/allure_report_1.png" width="50"> <img src="pictures/pytest_1.png" width="50">  <img src="pictures/python_1.svg" width="50"> <img src="pictures/selene_1.png" width="50"> <img src="pictures/selenoid_1.png" width="50"> <img src="pictures/tg_1.png" width="50"> 
 
 - Язык программирования `Python`
 - Фреймворк для написания UI тестов `Selene` с использованием `Selenium WebDriver`
@@ -39,13 +42,20 @@ pytest .
 ```
 
 ### Удаленный запуск тестов выполняется в Jenkins
-Посмотреть и запустить можно на странице проекта в [Jenkins](https://jenkins.autotests.cloud/job/C18-Dee_and_Linux_the_Cat-unit14_3/1/)
-
+Посмотреть и запустить можно на странице проекта в [Jenkins](https://jenkins.autotests.cloud/job/C18-Dee_and_Linux_the_Cat-unit13/)
 Для запуска тестов необходимо:
-1. Перейти на [проект](https://jenkins.autotests.cloud/job/C18-Dee_and_Linux_the_Cat-unit14_3/)
+1. Перейти на [проект](https://jenkins.autotests.cloud/job/C18-Dee_and_Linux_the_Cat-unit13/)
 2. Нажать на кнопку `Build now`
 3. Дождаться окончания тестирования
 4. Нажать на кнопку `Allure Report`
 
+### Через некоторое время билд будет готов в Jenkins
+
+### Так же отчет доступен в Allure
+[Allure](https://jenkins.autotests.cloud/job/C18-Dee_and_Linux_the_Cat-unit13/4/allure/#)
+
+### А детальную информацию, в том числе и медиафайлы, можно увидеть в разделе Suites
+[Suites](https://jenkins.autotests.cloud/job/C18-Dee_and_Linux_the_Cat-unit13/4/allure/#suites)
+
 ### Отчет о результатах тестирования в Telegram
-Отчеты приходят в канал [Report channel](https://t.me/ErmilovaDV_test_reports_bot)
+Краткие отчеты приходят в Telegram-канал [Report channel](https://t.me/ErmilovaDV_test_reports_bot)
