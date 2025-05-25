@@ -42,13 +42,20 @@ pytest .
 ```
 
 ### Удаленный запуск тестов выполняется в Jenkins
-Посмотреть и запустить можно на странице проекта в [Jenkins](https://jenkins.autotests.cloud/job/C18-Dee_and_Linux_the_Cat-unit14_3/1/)
-
+Посмотреть и запустить можно на странице проекта в [Jenkins](https://jenkins.autotests.cloud/job/C18-Dee_and_Linux_the_Cat-unit13/)
 Для запуска тестов необходимо:
-1. Перейти на [проект](https://jenkins.autotests.cloud/job/C18-Dee_and_Linux_the_Cat-unit14_3/)
+1. Перейти на [проект](https://jenkins.autotests.cloud/job/C18-Dee_and_Linux_the_Cat-unit13/)
 2. Нажать на кнопку `Build now`
 3. Дождаться окончания тестирования
 4. Нажать на кнопку `Allure Report`
 
+### Через некоторое время билд будет готов в Jenkins
+
+### Так же отчет доступен в Allure
+[Allure](https://jenkins.autotests.cloud/job/C18-Dee_and_Linux_the_Cat-unit13/4/allure/#)
+
+### А детальную информацию, в том числе и медиафайлы, можно увидеть в разделе Suites
+[Suites](https://jenkins.autotests.cloud/job/C18-Dee_and_Linux_the_Cat-unit13/4/allure/#suites)
+
 ### Отчет о результатах тестирования в Telegram
-Отчеты приходят в канал [Report channel](https://t.me/ErmilovaDV_test_reports_bot)
+Краткие отчеты приходят в Telegram-канал [Report channel](https://t.me/ErmilovaDV_test_reports_bot)
