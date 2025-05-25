@@ -6,15 +6,21 @@ from dotenv import load_dotenv
 import os
 
 from utils.attach import *
+from models.main_page import MainPage
 
 @pytest.fixture(scope="session", autouse=True)
 def load_env():
     load_dotenv()
 
+@pytest.fixture(scope='function')
+def main_page():
+    page = MainPage()
+    page.open()
+    return page
 
 
-@pytest.fixture(autouse=True, scope='function')
-def configure_base_browser():
+@pytest.fixture(autouse=True, scope='session')
+def setup_browser():
     selenoid_login = os.getenv("SELENOID_LOGIN")
     selenoid_pass = os.getenv("SELENOID_PASS")
     selenoid_url = os.getenv("SELENOID_URL")
@@ -45,11 +51,13 @@ def configure_base_browser():
         options=options)
     browser.config.driver = driver
 
-
     yield
-
-    add_screenshot(browser)
-    add_html(browser)
     add_video(browser)
     add_logs(browser)
     browser.quit()
+
+@pytest.fixture(autouse=True, scope='function')
+def save_test_results():
+    yield
+    add_screenshot(browser)
+    add_html(browser)
