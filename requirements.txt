@@ -5,6 +5,7 @@ allure-pytest>=2.9.45
 allure-python-commons~=2.14.2
 python-dotenv
 pydantic
+pydantic-settings
 beautifulsoup4
 Appium-Python-Client==4.0.0
 jsonschema
