@@ -12,8 +12,23 @@ class Config(BaseSettings):
     wrong_pass: str
     base_url: str
     run_in_selenoid: bool
+    android_remote_url: str
+    device_name: str
+    android_wait_activity: str
+    apk_path: str
+    use_browserstack: bool
     model_config = SettingsConfigDict(env_file='.env')
 
+class BstackConfig(BaseSettings):
+    username: str = ''
+    access_key: str = ''
+    platform_name: str = ''
+    platform_version: str = ''
+    remote_url: str = ''
+    device_name: str = ''
+    model_config = SettingsConfigDict(env_file='.env.bstack')
+
 config = Config()
+bstack_config = BstackConfig()
 
 

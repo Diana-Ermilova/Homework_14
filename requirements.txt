@@ -6,3 +6,4 @@ allure-python-commons~=2.14.2
 python-dotenv
 pydantic
 beautifulsoup4
+Appium-Python-Client==4.0.0
