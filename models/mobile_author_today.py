@@ -1,10 +1,7 @@
 from selene import browser, have, be
 import allure
 from appium.webdriver.common.appiumby import AppiumBy
-from selene.core.match import browser_has_script_returned
-
 from config import config
-
 
 class LoginPage:
 

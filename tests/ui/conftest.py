@@ -3,7 +3,6 @@ from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from dotenv import load_dotenv
-import os
 
 from models.author_today_login_page import LoginPage
 from models.main_page import MainPage

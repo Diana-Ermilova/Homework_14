@@ -1,13 +1,11 @@
 import pytest
 import allure
 from allure_commons.types import Severity
-from bs4 import BeautifulSoup
 from jsonschema import validate
 
 from config import config
 from models.api_author_today import api_author_today
 from schema.schema import unsuccessful_login
-from utils.attach import log_response, attach_response
 
 data_login = {"Login": config.login_author_today, "Password": config.pass_author_today}
 bad_data = {"Login": config.wrong_login, "Password": config.wrong_pass}

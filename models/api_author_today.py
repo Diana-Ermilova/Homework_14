@@ -1,5 +1,4 @@
 #у Author.Today очень недружелюбный API, поэтому придется использовать дополнительные библиотеки
-import pytest
 import requests
 from bs4 import BeautifulSoup
 from config import config

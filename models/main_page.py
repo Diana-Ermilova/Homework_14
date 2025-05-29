@@ -1,8 +1,5 @@
 import allure
 from selene import browser, by, have
-
-
-# тесты главной страницы сайта AuthorToday
 class MainPage:
     def open(self):
         with allure.step("Открытие главной страницы https://author.today/"):

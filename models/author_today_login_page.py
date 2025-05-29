@@ -1,5 +1,3 @@
-#https://author.today/Account/Login
-
 import allure
 from selene import browser, by, have
 
@@ -14,4 +12,3 @@ class LoginPage():
             browser.element('[name="Password"]').type(text=password)
             browser.element('[class="btn btn-primary btn-block mt-lg"]').click()
 
-    
