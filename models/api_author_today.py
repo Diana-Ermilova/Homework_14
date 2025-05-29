@@ -51,8 +51,11 @@ class ApiAuthorToday:
         attach_response(response)
         return response
 
-
-
+    def send_delete_method(self): #это полностью искусственный тест, так как на AuthorToday в подавляющем большинстве используются GET и POST запросы
+        response = self.session.delete(self.base_url + "work/updateLibrary")
+        log_response(response)
+        attach_response(response)
+        return response
 
 api_author_today = ApiAuthorToday()
 

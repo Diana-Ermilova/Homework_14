@@ -53,3 +53,11 @@ class TestUpdateLibrary:
         response_body = response.json()
         validate(response_body, book_is_not_exist)
 
+    @allure.tag('critical')
+    @allure.severity(Severity.CRITICAL)
+    @allure.label("owner", "ErmilovaDV")
+    @allure.feature("Author Today")
+    @allure.story("Метод DELETE Not Allowed")
+    @allure.link("https://author.today/work/updateLibrary", name="Testing")
+    def test_send_delete_method(self):
+        assert api_author_today.send_delete_method().status_code == 405

@@ -29,10 +29,6 @@ def author_today_login_page():
 
 @pytest.fixture(autouse=True, scope='function')
 def setup_browser():
-    #config.selenoid_login = os.getenv("SELENOID_LOGIN")
-    #config.selenoid_pass = os.getenv("SELENOID_PASS")
-    #config.selenoid_url = os.getenv("SELENOID_URL")
-
     browser.config.base_url = config.base_url
     browser.config.window_width = 1920
     browser.config.window_height = 1500
@@ -42,22 +38,22 @@ def setup_browser():
     driver_options.page_load_strategy = 'eager'
     browser.config.driver_options = driver_options
 
-    options=Options()
-    selenoid_capabilities = {
-        "browserName": "chrome",
-        "browserVersion": "127.0",
-        "selenoid:options": {
-            "enableVNC": True,
-            "enableVideo": True
+    if config.run_in_selenoid:
+        executor = f"https://{config.selenoid_login}:{config.selenoid_pass}@{config.selenoid_url}/wd/hub"
+        options = Options()
+        selenoid_capabilities = {
+            "browserName": "chrome",
+            "browserVersion": "127.0",
+            "selenoid:options": {
+                "enableVNC": True,
+                "enableVideo": True
+            }
         }
-    }
-    options.capabilities.update(selenoid_capabilities)
-
-    #executor = f"https://{selenoid_login}:{selenoid_pass}@{selenoid_url}/wd/hub"
-    #driver = webdriver.Remote(
-    #    command_executor=executor,
-    #    options=options)
-    #browser.config.driver = driver
+        options.capabilities.update(selenoid_capabilities)
+        driver = webdriver.Remote(
+            command_executor=executor,
+            options=options)
+        browser.config.driver = driver
 
     yield
     add_video(browser)

@@ -11,6 +11,7 @@ class Config(BaseSettings):
     wrong_login: str
     wrong_pass: str
     base_url: str
+    run_in_selenoid: bool
     model_config = SettingsConfigDict(env_file='.env')
 
 config = Config()
