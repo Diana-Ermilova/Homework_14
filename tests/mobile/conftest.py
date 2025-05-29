@@ -37,7 +37,7 @@ def mobile_management(context):
                 'accessKey': bstack_config.access_key,
             },
         )
-        remote_url = config.android_remote_url
+        remote_url = bstack_config.remote_url
     elif context == 'local_real_device':
         options.set_capability('deviceName', config.device_name)
         remote_url = config.android_remote_url
