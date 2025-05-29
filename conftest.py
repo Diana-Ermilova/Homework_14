@@ -5,8 +5,10 @@ from selenium.webdriver.chrome.options import Options
 from dotenv import load_dotenv
 import os
 
-from utils.attach import *
+from models.author_today_login_page import LoginPage
 from models.main_page import MainPage
+from utils.attach import *
+from config import config
 
 @pytest.fixture(scope="session", autouse=True)
 def load_env():
@@ -18,12 +20,18 @@ def main_page():
     page.open()
     return page
 
+@pytest.fixture(scope='function')
+def author_today_login_page():
+    page = LoginPage()
+    page.open()
+    return page
 
-@pytest.fixture(autouse=True, scope='session')
+
+@pytest.fixture(autouse=True, scope='function')
 def setup_browser():
-    selenoid_login = os.getenv("SELENOID_LOGIN")
-    selenoid_pass = os.getenv("SELENOID_PASS")
-    selenoid_url = os.getenv("SELENOID_URL")
+    #config.selenoid_login = os.getenv("SELENOID_LOGIN")
+    #config.selenoid_pass = os.getenv("SELENOID_PASS")
+    #config.selenoid_url = os.getenv("SELENOID_URL")
 
     browser.config.base_url = 'https://author.today/'
     browser.config.window_width = 1920
@@ -45,19 +53,16 @@ def setup_browser():
     }
     options.capabilities.update(selenoid_capabilities)
 
-    executor = f"https://{selenoid_login}:{selenoid_pass}@{selenoid_url}/wd/hub"
-    driver = webdriver.Remote(
-        command_executor=executor,
-        options=options)
-    browser.config.driver = driver
+    #executor = f"https://{selenoid_login}:{selenoid_pass}@{selenoid_url}/wd/hub"
+    #driver = webdriver.Remote(
+    #    command_executor=executor,
+    #    options=options)
+    #browser.config.driver = driver
 
     yield
     add_video(browser)
     add_logs(browser)
-    browser.quit()
-
-@pytest.fixture(autouse=True, scope='function')
-def save_test_results():
-    yield
     add_screenshot(browser)
     add_html(browser)
+    browser.quit()
+
