@@ -23,8 +23,8 @@ def context(request):
 def mobile_management(context):
     options = UiAutomator2Options()
     options.set_capability('appWaitActivity', config.android_wait_activity)
-    options.set_capability('app', os.path.join(os.path.abspath(os.curdir), config.apk_path))
     if context == "bstack":
+        options.set_capability('app', bstack_config.app)
         options.set_capability('deviceName', bstack_config.device_name)
         options.set_capability('platformName', bstack_config.platform_name)
         options.set_capability('platformVersion', bstack_config.platform_version)
@@ -39,6 +39,7 @@ def mobile_management(context):
         )
         remote_url = bstack_config.remote_url
     elif context == 'local_real_device':
+        options.set_capability('app', os.path.join(os.path.abspath(os.curdir), config.apk_path))
         options.set_capability('deviceName', config.device_name)
         remote_url = config.android_remote_url
 

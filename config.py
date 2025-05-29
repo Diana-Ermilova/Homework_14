@@ -24,8 +24,9 @@ class BstackConfig(BaseSettings):
     access_key: str = ''
     platform_name: str = ''
     platform_version: str = ''
-    remote_url: str = ''
+    android_remote_url: str = ''
     device_name: str = ''
+    app: str = ''
     model_config = SettingsConfigDict(env_file='.env.bstack')
 
 config = Config()
