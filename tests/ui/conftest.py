@@ -55,7 +55,8 @@ def setup_browser():
         browser.config.driver = driver
 
     yield
-    add_video(browser)
+    if config.run_in_selenoid:
+        add_video(browser)
     add_logs(browser)
     add_screenshot(browser)
     add_html(browser)
