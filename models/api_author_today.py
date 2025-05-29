@@ -3,6 +3,8 @@ import pytest
 import requests
 from bs4 import BeautifulSoup
 from config import config
+from utils.attach import log_response, attach_response
+
 
 class ApiAuthorToday:
     def __init__(self):
@@ -11,6 +13,8 @@ class ApiAuthorToday:
 
     def _get_token(self, _id):
         response = self.session.get(self.base_url)
+        log_response(response)
+        attach_response(response)
         return BeautifulSoup(response.text).find("form", id=_id).find(
             "input", {"name": "__RequestVerificationToken"})['value']
 
@@ -21,23 +25,31 @@ class ApiAuthorToday:
         if not self.is_logged_in():
             self.login({"Login": config.login_author_today, "Password": config.pass_author_today})
         token = self._get_token("logoffForm")
-        return self.session.post(
+        response =  self.session.post(
             self.base_url + 'work/updateLibrary',
             json = {"ids":[book_id], "state": state},
             headers={'requestverificationtoken': token, "x-requested-with": "XMLHttpRequest"})
+        log_response(response)
+        attach_response(response)
+        return response
 
     def login(self, data):
         login_token = self._get_token("loginForm")
 
-        return self.session.post(self.base_url + "account/login",
+        response =  self.session.post(self.base_url + "account/login",
                                      data={**data, "__RequestVerificationToken": login_token})
+        log_response(response)
+        attach_response(response)
+        return response
 
     def logout(self):
         logoff_token = self._get_token("logoffForm")
-        return self.session.post(
+        response = self.session.post(
             self.base_url + "account/logoff",
             data = {"__RequestVerificationToken": logoff_token})
-
+        log_response(response)
+        attach_response(response)
+        return response
 
 
 
