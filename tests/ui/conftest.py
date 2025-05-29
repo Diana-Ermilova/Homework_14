@@ -33,7 +33,7 @@ def setup_browser():
     #config.selenoid_pass = os.getenv("SELENOID_PASS")
     #config.selenoid_url = os.getenv("SELENOID_URL")
 
-    browser.config.base_url = 'https://author.today/'
+    browser.config.base_url = config.base_url
     browser.config.window_width = 1920
     browser.config.window_height = 1500
     browser.config.timeout = 10.0
