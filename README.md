@@ -1,5 +1,5 @@
 ## Простые тесты для сайта Author.Today
-[Author.Today] (https://author.today/)
+[Author.Today](https://author.today/)
 ---
 >Любовь к чтению сопровождает человека с раннего возраста до глубокой старости. Кому-то по нраву наслаждаться изящными словесными оборотами авторов классики мировой литературы, кто-то находит ответы на волнующие вопросы в книгах нон-фикшн, а для кого-то чтение — это возможность развлечься лихо закрученными сюжетами хороших детективов, любовных романов и фантастических произведений. (c) Описание с сайта.
 <img src="pictures/logo_main_1.jpg" width="5000">
@@ -50,16 +50,17 @@ pytest .
 4. Нажать на кнопку `Allure Report`
 
 ### Через некоторое время билд будет готов в Jenkins
-><img src="pictures/Jenkins.png" width="50">
+><img src="pictures/Jenkins.png" width="5000">
 
 ### Так же отчет доступен в Allure
 [Allure](https://jenkins.autotests.cloud/job/C18-Dee_and_Linux_the_Cat-unit13/4/allure/#)
-><img src="pictures/Allure.png" width="50">
+><img src="pictures/Allure.png" width="5000">
 
 ### А детальную информацию, в том числе и медиафайлы, можно увидеть в разделе Suites
 [Suites](https://jenkins.autotests.cloud/job/C18-Dee_and_Linux_the_Cat-unit13/4/allure/#suites)
-><img src="pictures/Suites.png" width="50">
+><img src="pictures/suites.png" width="5000">
 
 ### Отчет о результатах тестирования в Telegram
 Краткие отчеты приходят в Telegram-канал [Report channel](https://t.me/ErmilovaDV_test_reports_bot)
+><img src="pictures/Telegram.png" width="500">
 
