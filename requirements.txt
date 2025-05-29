@@ -7,3 +7,5 @@ python-dotenv
 pydantic
 beautifulsoup4
 Appium-Python-Client==4.0.0
+jsonschema
+requests
